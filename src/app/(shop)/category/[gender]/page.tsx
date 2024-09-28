@@ -1,4 +1,4 @@
-import { ProductGrid, Title } from "@/components";
+import { MobileCategoriesButtons, ProductGrid, Title } from "@/components";
 import { Gender } from "@/interfaces";
 import { initialData } from "@/seed/seed";
 // import { notFound } from "next/navigation";
@@ -25,7 +25,6 @@ export default function Category({ params }: Props) {
     unisex: "para todos",
   };
 
-  console.log(filteredProducts);
   return (
     <div>
       <Title
@@ -33,6 +32,7 @@ export default function Category({ params }: Props) {
         subtitle="Todos los productos"
         className="mb-2"
       />
+      <MobileCategoriesButtons category={gender} />
       <ProductGrid products={filteredProducts} />
     </div>
   );
